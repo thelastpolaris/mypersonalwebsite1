@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -13,22 +13,273 @@
       body {
         font-family: 'Montserrat', sans-serif;
       }
+      /* Simple smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "vite": "https://aistudiocdn.com/vite@^7.2.2",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+    <div id="root">
+      <div class="bg-gray-50 text-gray-800 min-h-screen">
+        <div 
+          class="absolute top-0 left-0 w-full h-full bg-no-repeat bg-left-top opacity-10 pointer-events-none" 
+          style="background-image: url('https://images.unsplash.com/photo-1518701045094-6992791421e3?q=80&w=2000&auto=format&fit=crop')">
+        </div>
+        <div class="relative z-10">
+          
+          <!-- Header -->
+          <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-transparent">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+              <a href="#hero" class="text-xl font-bold text-gray-900">
+                Артем Федоскин
+              </a>
+              <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Обо мне</a>
+                <a href="#experience" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Опыт</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Проекты</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Связаться</a>
+              </div>
+            </nav>
+          </header>
+
+          <main>
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-screen flex items-center justify-center bg-transparent py-20 md:py-0">
+              <div class="container mx-auto px-6">
+                <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                  <div class="md:w-3/5 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                      Артем Федоскин
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-8">
+                      Product Manager | Астана
+                    </p>
+                    <div class="max-w-xl mx-auto md:mx-0">
+                      <p class="text-lg text-gray-600">
+                        PM с бэкграундом в программировании, создаю инновационные продукты и AI проекты в <span class="font-semibold">Doodocs</span>.
+                      </p>
+                    </div>
+                    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                      <a href="#contact" class="inline-block bg-gray-800 text-white font-medium py-3 px-8 rounded-lg hover:bg-gray-900 transition-all duration-300 shadow-lg">
+                        Связаться со мной
+                      </a>
+                      <a href="https://drive.google.com/file/d/1QPs-7jENLy3h-dv5gd3vy0VG9LFc4D8n/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-gray-800 font-medium py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg border border-gray-200">
+                        Скачать резюме
+                      </a>
+                    </div>
+                  </div>
+                  <div class="md:w-2/5">
+                    <img src="https://i.ibb.co.com/ZpxqcDzK/photo-2025-10-03-23-41-57.jpg" alt="Артем Федоскин" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl mx-auto ring-4 ring-white/70" />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-20 md:py-32 bg-white">
+              <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Обо мне</h2>
+                <div class="w-24 h-1 bg-gray-800 mx-auto mb-12"></div>
+                <div class="max-w-3xl mx-auto text-center text-gray-600 leading-relaxed space-y-6">
+                  <p>
+                    Привет! Я Артем, Product Manager из Астаны с сильным техническим бэкграундом. Моя страсть — превращать сложные идеи в успешные и полезные продукты. Я специализируюсь на управлении полным жизненным циклом продукта: от исследования и концепции до запуска и масштабирования.
+                  </p>
+                  <p>
+                    Особое внимание я уделяю проектам в области искусственного интеллекта. Я верю, что AI технологии могут кардинально улучшить жизнь людей и бизнес-процессы. В Doodocs я работаю над созданием AI-решений, которые помогают нашим клиентам достигать новых высот.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="py-20 md:py-32 bg-gray-50">
+              <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Опыт работы</h2>
+                <div class="w-24 h-1 bg-gray-800 mx-auto mb-16"></div>
+                <div class="relative max-w-3xl mx-auto">
+                  <div class="absolute left-3 md:left-1/2 h-full w-0.5 bg-gray-200 transform md:-translate-x-1/2"></div>
+                  
+                  <!-- Experience Item 1 -->
+                  <div class="relative mb-8 flex md:justify-between items-center w-full md:flex-row-reverse">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 absolute left-0 top-1 md:left-1/2 md:-ml-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-4 ring-gray-50"></div>
+                    <div class="ml-10 md:ml-0 bg-white rounded-lg shadow-md p-6 md:w-5/12 md:pr-12">
+                      <p class="text-gray-500 text-sm mb-1">2022 - Настоящее время</p>
+                      <h3 class="text-xl font-bold text-gray-900">Product Manager</h3>
+                      <p class="text-md font-semibold text-gray-700 mb-3">Doodocs</p>
+                      <p class="text-gray-600 text-sm mb-4">Управление продуктовой стратегией и разработкой AI-решений для автоматизации документооборота. Проведение исследований рынка, определение требований к продукту и координация работы кросс-функциональных команд.</p>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">Agile</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">Scrum</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">JIRA</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">Figma</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">AI/ML Concepts</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Experience Item 2 -->
+                  <div class="relative mb-8 flex md:justify-between items-center w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 absolute left-0 top-1 md:left-1/2 md:-ml-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-4 ring-gray-50"></div>
+                    <div class="ml-10 md:ml-0 bg-white rounded-lg shadow-md p-6 md:w-5/12 md:pl-12">
+                      <p class="text-gray-500 text-sm mb-1">2019 - 2022</p>
+                      <h3 class="text-xl font-bold text-gray-900">Software Engineer</h3>
+                      <p class="text-md font-semibold text-gray-700 mb-3">Tech Solutions Inc.</p>
+                      <p class="text-gray-600 text-sm mb-4">Разработка и поддержка веб-приложений с использованием современных фреймворков. Участвовал в полном цикле разработки, от проектирования архитектуры до развертывания.</p>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">React</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">TypeScript</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">PostgreSQL</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded">Docker</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="py-20 md:py-32 bg-white">
+              <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Портфолио проектов</h2>
+                <div class="w-24 h-1 bg-gray-800 mx-auto mb-16"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  
+                  <!-- Project Card 1 -->
+                  <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=870&auto=format&fit=crop" alt="Doodocs – Система документооборота" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 text-gray-900">Doodocs – Система документооборота</h3>
+                      <p class="text-gray-600 mb-4 text-sm">Выступил в роли founding product manager, отвечая за запуск и развитие первой AI-системы документооборота в Казахстане от идеи до первых 1000 корпоративных клиентов.</p>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Founding PM</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">AI/ML</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">SaaS</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">B2B</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Project Card 2 -->
+                  <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=870&auto=format&fit=crop" alt="Alem School – IT Школа" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 text-gray-900">Alem School – IT Школа</h3>
+                      <p class="text-gray-600 mb-4 text-sm">Запускал "бассейны" (отборочные интенсивы) и проводил онлайн-чемпионаты по программированию, управляя процессами отбора и вовлечения студентов.</p>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Project Management</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">EdTech</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Community Building</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Project Card 3 -->
+                  <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1521185496955-15097b20c5fe?q=80&w=870&auto=format&fit=crop" alt="Google Summer of Code (2016, 2019)" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 text-gray-900">Google Summer of Code (2016, 2019)</h3>
+                      <p class="text-gray-600 mb-4 text-sm">Дважды участвовал в престижной международной программе Google, работая над open-source проектами и внося вклад в глобальные IT-решения.</p>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Open Source</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Software Development</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Global Teams</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 md:py-32 bg-gray-800 text-white">
+              <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Связаться со мной</h2>
+                <p class="max-w-2xl mx-auto text-gray-300 mb-12">
+                  Я всегда открыт для новых проектов, интересных идей и сотрудничества. Заполните форму ниже или используйте ссылки для связи.
+                </p>
+                <div class="max-w-2xl mx-auto bg-white rounded-lg overflow-hidden shadow-2xl">
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxQ2Kp9RT9OWyElD7nOcKT1OVgIiUiJwhU-x6mr7OO1e6Rhw/viewform?embedded=true" width="100%" height="689" frameborder="0" marginheight="0" marginwidth="0" title="Форма для связи" style="display: block;">Загрузка…</iframe>
+                </div>
+                <div class="mt-16">
+                  <p class="text-gray-400 mb-6">Или свяжитесь со мной напрямую:</p>
+                  <div class="flex justify-center items-center space-x-8">
+                    <a href="mailto:afedoskin3@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Написать на почту">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                      </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/artem-fedoskin-9ab0aaa1/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Профиль LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                      </svg>
+                    </a>
+                    <a href="https://github.com/thelastpolaris" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Профиль Github">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+
+          <!-- Footer -->
+          <footer class="text-center py-8 text-gray-500 text-sm">
+            <p>&copy; 2024 Артем Федоскин. Все права защищены.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const header = document.getElementById('header');
+        
+        // Header scroll effect
+        const handleScroll = () => {
+          if (window.scrollY > 10) {
+            header.classList.add('bg-white/80', 'shadow-md', 'backdrop-blur-sm');
+            header.classList.remove('bg-transparent');
+          } else {
+            header.classList.remove('bg-white/80', 'shadow-md', 'backdrop-blur-sm');
+            header.classList.add('bg-transparent');
+          }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+
+        // Update footer year
+        const yearElement = document.querySelector('footer p');
+        if(yearElement) {
+            yearElement.innerHTML = `&copy; ${new Date().getFullYear()} Артем Федоскин. Все права защищены.`;
+        }
+      });
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
